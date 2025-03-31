@@ -81,6 +81,7 @@ def paradise():
         location.append(i)
         images[i] = person['person']["image"]["medium"]
         i+=1
+        
     
     selectedPerson = st.selectbox("Select an Actor:", cast)
     test = False
@@ -93,7 +94,8 @@ def paradise():
 
 
 
-
-
 paradise()
 
+
+
+    
