@@ -84,7 +84,7 @@ def paradise():
     selectedPerson = st.selectbox("Select an Actor:", cast)
 
     if images[selectedPerson]:
-        st.image(images[selectedEpisode], caption= name)
+        st.image(images[selectedPerson], caption= name)
     else:
         st.write("No image is available for this actor")
 
