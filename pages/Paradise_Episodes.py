@@ -81,13 +81,16 @@ def paradise():
         location.append(i)
         images[i] = person['person']["image"]["medium"]
         i+=1
-        
     
     selectedPerson = st.selectbox("Select an Actor:", cast)
-    if images[selectedPerson]:
-        st.image(images[selectedPerson], caption = name)
-    else:
+    test = False
+    for index in range(len(cast)):
+        if selectedPerson = cast[index]:
+            st.image(images[inedex], caption = name)
+            test = True
+    if test == False:
         st.write("No image is available for this actor")
+
 
 
 
