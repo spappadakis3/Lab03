@@ -7,7 +7,8 @@ st.title("Paradise Episode Information")
 
 
 def paradise():
-    showUrl = "https://api.tvmaze.com/shows/75030/episodes"
+    endpoint = "episodes"
+    showUrl = "https://api.tvmaze.com/shows/75030/" + endpoint
     r = requests.get(showUrl)
     showData = r.json()
 
@@ -63,13 +64,30 @@ def paradise():
                                     "Runtime": st.session_state.selected_runtime_runtimes })
         st.bar_chart(runtime_df.set_index("Episode"))
 
+    endpoint2 = "cast"
+    showUrl2 = "https://api.tvmaze.com/shows/75030/" + endpoint2
+    r = requests.get(showUrl2)
+    showData2 = r.json()
+
+    st.header("Who is Your Favorite Actor in 'Paradise'?")
+    cast = []
+    name = ''
+    location = -1
+    for person in showData2:
+        cast.append(person["person"]['name'])
+        name = person["person"]['name']
+        location = 0
+        images[location] = ep["image"]["medium"]
+        location+=1
+        
+    
+    selectedPerson = st.selectbox("Select an Actor:", cast)
+
+    if images[selectedPerson]:
+        st.image(images[selectedEpisode], caption= name)
+    else:
+        st.write("No image is available for this actor")
+
 
 
 paradise()
-
-
-
-        
-
-
-
