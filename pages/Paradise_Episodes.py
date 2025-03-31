@@ -72,22 +72,25 @@ def paradise():
     st.header("Who is Your Favorite Actor in 'Paradise'?")
     cast = []
     name = ''
-    location = -1
+    location =[]
+    i=0
     for person in showData2:
         cast.append(person["person"]['name'])
-        name = person["person"]['name']
-        location = 0
+        name = str(person["person"]['name'])
+        print(name)
+        location.append(i)
         images[location] = ep["image"]["medium"]
-        location+=1
+        i+=1
         
     
     selectedPerson = st.selectbox("Select an Actor:", cast)
 
-    if images[selectedPerson]:
-        st.image(images[selectedPerson], caption= name)
+    if images[i]:
+        st.image(images[i], caption = name)
     else:
         st.write("No image is available for this actor")
 
 
 
 paradise()
+
