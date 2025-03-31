@@ -86,7 +86,7 @@ def paradise():
     selectedPerson = st.selectbox("Select an Actor:", cast)
     test = False
     for index in range(len(cast)):
-        if selectedPerson = cast[index]:
+        if selectedPerson == cast[index]:
             st.image(images[inedex], caption = name)
             test = True
     if test == False:
