@@ -79,7 +79,7 @@ def paradise():
         name = str(person["person"]['name'])
         print(name)
         location.append(i)
-        images[location] = ep["image"]["medium"]
+        images[i] = person['person']["image"]["medium"]
         i+=1
         
     
