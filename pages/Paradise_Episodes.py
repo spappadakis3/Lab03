@@ -87,7 +87,7 @@ def paradise():
     test = False
     for index in range(len(cast)):
         if selectedPerson == cast[index]:
-            st.image(images[inedex], caption = name)
+            st.image(images[index], caption = name)
             test = True
     if test == False:
         st.write("No image is available for this actor")
